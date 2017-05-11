@@ -9,7 +9,7 @@ if __name__=="__main__":
 #	Open the files and write the start of "import.xml".
 	reqnum = int(sys.argv[1])
 	a=open("data\sub.txt","r")
-	b=open("data\import"+str(reqnum)+".xml","w")
+	b=open("data\\nrxml\import"+str(reqnum)+".xml","w")
 	#for test
 	#print(a.name)
 
@@ -89,7 +89,7 @@ if __name__=="__main__":
 	k=0
 	while(k<reqnum):
 		b.writelines("<VirtualNetwork layer=\""+str(k+1)+"\">\n")
-		a=open("data/ps2500/req"+str(k)+".txt","r")
+		a=open("data/nr2500/req"+str(k)+".txt","r")
 		
 		#for test
 		#print(a.readline())

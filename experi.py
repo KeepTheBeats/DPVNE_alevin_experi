@@ -117,7 +117,7 @@ if __name__=="__main__":
 			rc = re.split("\n",r)
 			b.writelines("<VirtualNode coordinateX=\"0\" coordinateY=\"0\" id=\""+str(i+1)+"\">\n")
 			b.writelines("<Demand type=\"CpuDemand\">\n")
-			b.writelines("<Parameter name=\"DemandedCycles\" type=\"Double\" value=\""+str(rc[0])+"\"/>\n")
+			b.writelines("<Parameter name=\"DemandedCycles\" type=\"Double\" value=\""+str(float(rc[0])/10)+"\"/>\n")
 
 			b.writelines("</Demand>\n")
 			b.writelines("</VirtualNode>\n")
@@ -137,7 +137,7 @@ if __name__=="__main__":
 			
 			b.writelines("<Demand type=\"BandwidthDemand\">\n")
 
-			b.writelines("<Parameter name=\"DemandedBandwidth\" type=\"Double\" value=\""+str(rc2[0])+"\"/>\n")
+			b.writelines("<Parameter name=\"DemandedBandwidth\" type=\"Double\" value=\""+str(float(rc2[0])/10)+"\"/>\n")
 
 			b.writelines("</Demand>\n")
 

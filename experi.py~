@@ -1,12 +1,13 @@
 #coding:utf-8
 
 import re
+import sys
 
 if __name__=="__main__":
 #	print("hello world!")
 
 #	Open the files and write the start of "import.xml".
-	reqnum = 2500
+	reqnum = sys.argv[1]
 	a=open("data\sub.txt","r")
 	b=open("data\import"+str(reqnum)+".xml","w")
 	#for test
@@ -131,12 +132,12 @@ if __name__=="__main__":
 			#print("link:"+str(j+1)+" id:"+str(i+1))
 			r = a.readline()
 			rc = re.split(" ",r)
-			#rc2 = re.split("\n",rc[2])
+			rc2 = re.split("\n",rc[2])
 			b.writelines("<VirtualLink source=\""+str(int(rc[0])+i0+1)+"\" destination=\""+str(int(rc[1])+i0+1)+"\" id=\""+str(i+1)+"\">\n")
 			
 			b.writelines("<Demand type=\"BandwidthDemand\">\n")
 
-			b.writelines("<Parameter name=\"DemandedBandwidth\" type=\"Double\" value=\""+str(rc[2])+"\"/>\n")
+			b.writelines("<Parameter name=\"DemandedBandwidth\" type=\"Double\" value=\""+str(rc2[0])+"\"/>\n")
 
 			b.writelines("</Demand>\n")
 

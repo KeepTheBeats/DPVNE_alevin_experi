@@ -1,12 +1,13 @@
 #coding:utf-8
 
 import re
+import sys
 
 if __name__=="__main__":
 #	print("hello world!")
 
 #	Open the files and write the start of "import.xml".
-	reqnum = 2500
+	reqnum = int(sys.argv[1])
 	a=open("data\sub.txt","r")
 	b=open("data\import"+str(reqnum)+".xml","w")
 	#for test

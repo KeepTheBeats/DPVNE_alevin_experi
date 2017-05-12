@@ -66,6 +66,13 @@ if __name__=="__main__":
 		b.writelines("<Parameter name=\"Bandwidth\" type=\"Double\" value=\""+str(rc2[0])+"\"/>\n")
 		b.writelines("</Resource>\n</SubstrateLink>\n")
 		i=i+1;
+		b.writelines("<SubstrateLink source=\""+str(int(rc[1])+1)+"\" destination=\""+str(int(rc[0])+1)+"\" id=\""+str(i+1)+"\">\n")
+		b.writelines("<Resource type=\"BandwidthResource\">\n")
+		b.writelines("<Parameter name=\"Bandwidth\" type=\"Double\" value=\""+str(rc2[0])+"\"/>\n")
+		b.writelines("</Resource>\n</SubstrateLink>\n")
+		i=i+1;
+
+
 		j=j+1;
 
 

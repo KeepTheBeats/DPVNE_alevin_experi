@@ -1,1 +1,1 @@
-for /L %%a in (50,50,2500) do python experi.py %%a
+for /L %%a in (10,10,200) do python experi.py %%a

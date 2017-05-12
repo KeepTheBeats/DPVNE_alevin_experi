@@ -66,6 +66,13 @@ if __name__=="__main__":
 		b.writelines("<Parameter name=\"Bandwidth\" type=\"Double\" value=\""+str(rc2[0])+"\"/>\n")
 		b.writelines("</Resource>\n</SubstrateLink>\n")
 		i=i+1;
+		b.writelines("<SubstrateLink source=\""+str(int(rc[1])+1)+"\" destination=\""+str(int(rc[0])+1)+"\" id=\""+str(i+1)+"\">\n")
+		b.writelines("<Resource type=\"BandwidthResource\">\n")
+		b.writelines("<Parameter name=\"Bandwidth\" type=\"Double\" value=\""+str(rc2[0])+"\"/>\n")
+		b.writelines("</Resource>\n</SubstrateLink>\n")
+		i=i+1;
+
+
 		j=j+1;
 
 
@@ -117,7 +124,7 @@ if __name__=="__main__":
 			rc = re.split("\n",r)
 			b.writelines("<VirtualNode coordinateX=\"0\" coordinateY=\"0\" id=\""+str(i+1)+"\">\n")
 			b.writelines("<Demand type=\"CpuDemand\">\n")
-			b.writelines("<Parameter name=\"DemandedCycles\" type=\"Double\" value=\""+str(float(rc[0])/10)+"\"/>\n")
+			b.writelines("<Parameter name=\"DemandedCycles\" type=\"Double\" value=\""+str(float(rc[0]))+"\"/>\n")
 
 			b.writelines("</Demand>\n")
 			b.writelines("</VirtualNode>\n")
@@ -137,7 +144,7 @@ if __name__=="__main__":
 			
 			b.writelines("<Demand type=\"BandwidthDemand\">\n")
 
-			b.writelines("<Parameter name=\"DemandedBandwidth\" type=\"Double\" value=\""+str(float(rc2[0])/10)+"\"/>\n")
+			b.writelines("<Parameter name=\"DemandedBandwidth\" type=\"Double\" value=\""+str(float(rc2[0]))+"\"/>\n")
 
 			b.writelines("</Demand>\n")
 

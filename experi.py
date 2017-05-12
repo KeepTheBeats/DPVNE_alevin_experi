@@ -151,6 +151,17 @@ if __name__=="__main__":
 
 			b.writelines("</VirtualLink>\n")
 			i=i+1
+			b.writelines("<VirtualLink source=\""+str(int(rc[1])+i0+1)+"\" destination=\""+str(int(rc[0])+i0+1)+"\" id=\""+str(i+1)+"\">\n")
+			
+			b.writelines("<Demand type=\"BandwidthDemand\">\n")
+
+			b.writelines("<Parameter name=\"DemandedBandwidth\" type=\"Double\" value=\""+str(float(rc2[0]))+"\"/>\n")
+
+			b.writelines("</Demand>\n")
+
+
+			b.writelines("</VirtualLink>\n")
+			i=i+1
 			j=j+1
 
 
